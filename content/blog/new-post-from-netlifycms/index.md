@@ -2,6 +2,7 @@
 title: New Post from NetlifyCMS
 date: 2020-08-31T06:10:38.917Z
 description: Creating a post from NetlifyCMS to make sure everything is working
+posttype: "Blog"
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et vestibulum tellus. Integer vel erat faucibus, ultrices orci id, pellentesque quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam sollicitudin placerat sem. In ullamcorper ut leo ut molestie. In hac habitasse platea dictumst. Morbi dui ex, sollicitudin id turpis non, scelerisque laoreet ligula. Aenean sit amet tellus luctus, congue purus condimentum, gravida quam. Nam vel luctus tortor. Aliquam est ipsum, placerat ac sapien vel, tempor aliquet neque. Proin ultrices pellentesque faucibus. Pellentesque in dui sit amet sem hendrerit sagittis. In hac habitasse platea dictumst. Sed a lacinia arcu, in facilisis mi. Curabitur tincidunt nunc in dui faucibus, eget commodo ex dictum.
 

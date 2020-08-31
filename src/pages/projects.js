@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -13,8 +12,9 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      <p>You can see my projects <Link to="/projects">Here</Link></p>
+      
+      <p>You can see my blog posts <Link to="/">Here</Link></p>
+
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -54,20 +54,22 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {posttype: {eq: "Blog"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
+    allMarkdownRemark(
+        filter: {frontmatter: {posttype: {eq: "Project"}}},
+        sort: { fields: [frontmatter___date], order: DESC }) {
+            edges {
+                node {
+                excerpt
+                fields {
+                    slug
+                }
+                frontmatter {
+                    date(formatString: "MMMM DD, YYYY")
+                    title
+                    description
+                }
+                }
+            }
     }
   }
 `
