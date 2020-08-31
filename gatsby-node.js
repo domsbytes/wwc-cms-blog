@@ -58,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create blog posts pages.
+  // Create projects posts pages.
   projectPosts.forEach((post, index) => {
 
     createPage({

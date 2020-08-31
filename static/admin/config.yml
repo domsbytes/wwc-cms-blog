@@ -22,22 +22,22 @@ collections:
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: "PostType", name: "posttype", widget: "hidden", default: "Blog" }
-    - name: 'project'
-      label: 'Project'
-      folder: 'content/project'
-      create: true
-      slug: 'index'
-      media_folder: ''
-      public_folder: ''
-      path: '{{title}}/index'
-      editor:
-        preview: false
-      fields:
-        - { label: 'Title', name: 'title', widget: 'string' }
-        - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-        - { label: 'Description', name: 'description', widget: 'string' }
-        - { label: 'Link', name: 'link', widget: 'string' }
-        - { label: 'Code', name: 'code', widget: 'string' }
-        - { label: 'Body', name: 'body', widget: 'markdown' }
-        - { label: "PostType", name: "posttype", widget: "hidden", default: "Project" }
+  - name: 'project'
+    label: 'Project'
+    folder: 'content/project'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Code', name: 'code', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "PostType", name: "posttype", widget: "hidden", default: "Project" }
 
