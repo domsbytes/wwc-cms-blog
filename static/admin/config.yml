@@ -24,7 +24,7 @@ collections:
       - { label: "PostType", name: "posttype", widget: "hidden", default: "Blog" }
   - name: 'project'
     label: 'Project'
-    folder: 'content/project'
+    folder: 'content/projects'
     create: true
     slug: 'index'
     media_folder: ''
