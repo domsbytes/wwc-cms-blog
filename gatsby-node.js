@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const projectPost = path.resolve(`./src/templates/project-post.js`)
   const result = await graphql(
     `
       {
@@ -19,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                posttype
               }
             }
           }
@@ -31,12 +33,19 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
+  
+  const allPosts = result.data.allMarkdownRemark.edges
+  let blogPosts = allPosts.filter(function(post) {
+    return post.node.frontmatter.posttype == "Blog"
+  })
+  let projectPosts = allPosts.filter(function(post) {
+    return post.node.frontmatter.posttype == "Project"
+  })
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+  // Create blog posts pages.
+  blogPosts.forEach((post, index) => {
+    const previous = index === blogPosts.length - 1 ? null : blogPosts[index + 1].node
+    const next = index === 0 ? null : blogPosts[index - 1].node
 
     createPage({
       path: post.node.fields.slug,
@@ -45,6 +54,18 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
         previous,
         next,
+      },
+    })
+  })
+
+  // Create blog posts pages.
+  projectPosts.forEach((post, index) => {
+
+    createPage({
+      path: post.node.fields.slug,
+      component: projectPost,
+      context: {
+        slug: post.node.fields.slug,
       },
     })
   })
